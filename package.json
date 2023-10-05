@@ -1,0 +1,17 @@
+{
+  "name": "eazcanvas",
+  "module": "src/index.ts",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A canvas library for easy drawing",
+  "scripts": {
+    "build": "bun build ./src/ --outfile=./dist/bundle.js",
+    "test": "bun run ./test/test.ts"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
