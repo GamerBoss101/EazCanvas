@@ -1,22 +1,14 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "es2016"],
-    "module": "es6",
-    "target": "es2016",
-    "moduleResolution": "bundler",
-    "moduleDetection": "force",
+    "target": "es2016",                                 
+    "module": "commonjs",                                
+    "allowJs": true,                                    
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,            
+    "strict": true,                                      
+    "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
-    "composite": true,
-    "strict": true,
-    "downlevelIteration": true,
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "types": [
-      "bun-types", // add Bun global
-      "@types/node"
-    ]
+    "outDir": "./dist/",                   
   }
 }

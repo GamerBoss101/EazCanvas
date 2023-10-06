@@ -10,9 +10,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.8.2",
-    "bun-types": "latest"
-  },
-  "peerDependencies": {
+    "bun-types": "latest",
     "typescript": "^5.0.0"
   }
 }

@@ -8,20 +8,20 @@ export default class EazCanvas {
     app: Array<any>;
     isRunning: boolean;
     canvas: HTMLCanvasElement;
-    ctx: any;
+    ctx: CanvasRenderingContext2D;
     constructor(props: any) {
 
         this.app = [];
         this.isRunning = true;
 
         if(props.parent) {
-            const parent = document.querySelector(props.parent);
-            this.canvas = document.createElement('canvas');
+            const parent = document.querySelector(props.parent) as HTMLCanvasElement;
+            this.canvas = document.createElement('canvas') as HTMLCanvasElement;
             parent?.appendChild(this.canvas);
-            this.ctx = this.canvas.getContext('2d') as any;
+            this.ctx = this.canvas.getContext('2d') as CanvasRenderingContext2D;
         } else if(props.canvas) {
             this.canvas = props.canvas;
-            this.ctx = this.canvas.getContext('2d') as any;
+            this.ctx = this.canvas.getContext('2d') as CanvasRenderingContext2D;
         } else {
             throw new Error('No canvas or parent provided');
         }
@@ -115,7 +115,7 @@ export default class EazCanvas {
         });
     }
 
-    getMousePos(event: any) {
+    getMousePos(event: MouseEvent) {
         const rect = this.canvas.getBoundingClientRect();
         return {
             x: event.clientX - rect.left,
@@ -124,19 +124,19 @@ export default class EazCanvas {
     }
 
     onClick(callback: Function) {
-        this.canvas.addEventListener('click', (event: any) => {
+        this.canvas.addEventListener('click', (event: MouseEvent) => {
             callback(this.getMousePos(event));
         });
     }
 
     onHover(callback: Function) {
-        this.canvas.addEventListener('mousemove', (event: any) => {
+        this.canvas.addEventListener('mousemove', (event: MouseEvent) => {
             callback(this.getMousePos(event));
         });
     }
 
     onHoverOut(callback: Function) {
-        this.canvas.addEventListener('mouseout', (event: any) => {
+        this.canvas.addEventListener('mouseout', (event: MouseEvent) => {
             callback(this.getMousePos(event));
         });
     }
